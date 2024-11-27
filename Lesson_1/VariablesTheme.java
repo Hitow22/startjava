@@ -13,13 +13,12 @@ public class VariablesTheme {
         System.out.println("Частота ядер процессора = " + coreFrequency);
         double boostCoreFrequency = 4.9;
         System.out.println("Частота ядер процессора в разгоне = " + boostCoreFrequency);
-        char compGrade = 'A';
-        System.out.println("Рейтинг компьютера = " + compGrade);
-        boolean isCompOn = true;
-        System.out.println("Компьютер включен? = " + isCompOn);
+        char computerGrade = 'A';
+        System.out.println("Рейтинг компьютера = " + computerGrade);
+        boolean isComputerOn = true;
+        System.out.println("Компьютер включен? = " + isComputerOn);
 
-        System.out.println(" ");
-        System.out.println("2. Расчет стоимости товара со скидкой");
+        System.out.println("\n2. Расчет стоимости товара со скидкой");
         double penCost = 105.5;
         double bookCost = 235.83;
         double discountSum = (penCost + bookCost) / 100.0 * 11;
@@ -29,15 +28,13 @@ public class VariablesTheme {
         System.out.println("Сумма скидки = " + discountSum + " рублей");
         System.out.println("Стоимость товаров со скидкой = " + discountCost + " рублей");
 
-        System.out.println(" ");
-        System.out.println("3. Вывод слова JAVA");
+        System.out.println("\n3. Вывод слова JAVA");
         System.out.println("   J    a  v     v  a ");
         System.out.println("   J   a a  v   v  a a");
         System.out.println("J  J  aaaaa  V V  aaaaa");
         System.out.println(" JJ  a     a  V  a     a");
 
-        System.out.println(" ");
-        System.out.println("4. Вывод min и max значений целых числовых типов");
+        System.out.println("\n4. Вывод min и max значений целых числовых типов");
         byte byteMaxValue = 127;
         System.out.println("Максимальное значение byte = " + byteMaxValue);
         byteMaxValue++;
@@ -63,8 +60,7 @@ public class VariablesTheme {
         longMaxValue--;
         System.out.println("Значение long после декремента = " + longMaxValue);
 
-        System.out.println(" ");
-        System.out.println("5. Перестановка значений переменных");
+        System.out.println("\n5. Перестановка значений переменных");
         int num1 = 2;
         int num2 = 5;
         System.out.println("Исходные значения: num1 = " + num1 + ", num2 = " + num2);
@@ -84,8 +80,7 @@ public class VariablesTheme {
         System.out.println("Перестановка с помощью побитовой операции ^: num1 = " + num1 +
                 ", num2 = " + num2);
 
-        System.out.println(" ");
-        System.out.println("6. Вывод символов и их кодов");
+        System.out.println("\n6. Вывод символов и их кодов");
         char symbol1 = '$';
         char symbol2 = '*';
         char symbol3 = '@';
@@ -97,8 +92,7 @@ public class VariablesTheme {
         System.out.println("Код символа = " + (int) symbol4 + ", символ = " + symbol4);
         System.out.println("Код символа = " + (int) symbol5 + ", символ = " + symbol5);
 
-        System.out.println(" ");
-        System.out.println("7. Вывод в консоль ASCII-арт Дюка");
+        System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
         char backslash = '\\';
         char underscore = '_';
@@ -111,8 +105,7 @@ public class VariablesTheme {
         System.out.println("" + slash + underscore + underscore + underscore + underscore + slash +
                 backslash + underscore + underscore + backslash);
 
-        System.out.println(" ");
-        System.out.println("8. Манипуляции с сотнями, десятками и единицами числа");
+        System.out.println("\n8. Манипуляции с сотнями, десятками и единицами числа");
         int number = 123;
         int hundreds = number / 100;
         int tens = (number / 10) % 10;
@@ -126,8 +119,7 @@ public class VariablesTheme {
         System.out.println("Сумма разрядов = " + sum);
         System.out.println("Произведение разрядов = " + mult);
 
-        System.out.println(" ");
-        System.out.println("9. Перевод секунд в часы, минуты и секунды");
+        System.out.println("\n9. Перевод секунд в часы, минуты и секунды");
         int totalSeconds = 86399;
         int hours = totalSeconds / 3600;
         int minutes = (totalSeconds % 3600) / 60;

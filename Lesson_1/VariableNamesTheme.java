@@ -7,20 +7,20 @@ public class VariableNamesTheme {
         System.out.println("Цифра = " + number);
 
         // Сумма чисел
-        int sumNumbers = 7;
-        System.out.println("Сумма чисел = " + sumNumbers);
+        int numbersSum = 7;
+        System.out.println("Сумма чисел = " + numbersSum);
 
         // Произведение цифр
-        int multNumbers = 8;
-        System.out.println("Произведение цифр = " + multNumbers);
+        int numbersMult = 8;
+        System.out.println("Произведение цифр = " + numbersMult);
 
         // Максимальное число
         int maxNumber = 5;
         System.out.println("Максимальное число = " + maxNumber);
 
         // Количество десятков
-        int tenCount = 2;
-        System.out.println("Количество десятков = " + tenCount);
+        int tensCount = 2;
+        System.out.println("Количество десятков = " + tensCount);
 
         // Вес собаки
         double dogWeight = 16.5;
@@ -59,8 +59,8 @@ public class VariableNamesTheme {
         System.out.println("Случайное число = " + randomNumber);
 
         // Математическое выражение
-        int mathEx = 88 + 88;
-        System.out.println("Математическое выражение = " + mathEx);
+        int mathExpression = 88 + 88;
+        System.out.println("Математическое выражение = " + mathExpression);
 
         // Счет в игре
         double score = 10.5;
@@ -114,12 +114,11 @@ public class VariableNamesTheme {
         int numbersCount = 21;
         System.out.println("Количество чисел в каждой строке = " + numbersCount);
 
-        System.out.println(" ");
-        System.out.println("2. Boolean-переменные");
+        System.out.println("\n2. Boolean-переменные");
 
         // Сотни равны?
-        boolean isEquals = true;
-        System.out.println("Сотни равны? = " + isEquals);
+        boolean isHundredsEquals = true;
+        System.out.println("Сотни равны? = " + isHundredsEquals);
 
         // Компьютер включен?
         boolean isComputerOn = true;
@@ -153,16 +152,15 @@ public class VariableNamesTheme {
         boolean hasUniqueStrings = false;
         System.out.println("Имеются уникальные строки? = " + hasUniqueStrings);
 
-        System.out.println(" ");
-        System.out.println("3. Аббревиатуры");
+        System.out.println("\n3. Аббревиатуры");
 
         // Старый universally unique identifier
-        String uuid = "UUID";
-        System.out.println("Старый universally unique identifier = " + uuid);
+        String oldUuid = "UUID";
+        System.out.println("Старый universally unique identifier = " + oldUuid);
 
         // Производитель оперативной памяти
-        String ramBrand = "Kingston";
-        System.out.println("Производитель оперативной памяти = " + ramBrand);
+        String ramManufacturer = "Kingston";
+        System.out.println("Производитель оперативной памяти = " + ramManufacturer);
 
         // Емкость жесткого диска
         double hddCapacity = 333.5;
@@ -173,12 +171,12 @@ public class VariableNamesTheme {
         System.out.println("Протокол передачи гипертекста = " + http);
 
         // Сокращенный uniform resource locator
-        String url = "URL";
-        System.out.println("Сокращенный uniform resource locator = " + url);
+        String shortUrl = "URL";
+        System.out.println("Сокращенный uniform resource locator = " + shortUrl);
 
         // Новый идентификатор клиента
-        int clientId = 1;
-        System.out.println("Новый идентификатор клиента = " + clientId);
+        int newClientId = 1;
+        System.out.println("Новый идентификатор клиента = " + newClientId);
 
         // American standard code for information interchange
         String ascii = "ASCII";
