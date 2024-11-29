@@ -3,8 +3,8 @@ public class VariablesTheme {
         System.out.println("1. Вывод характеристик компьютера");
         byte coreThreads = 4;
         System.out.println("Число ядер процессора = " + coreThreads);
-        short ram = 16;
-        System.out.println("Объем оперативной памяти = " + ram);
+        short ramValue = 16;
+        System.out.println("Объем оперативной памяти = " + ramValue);
         int ssdValue = 1000;
         System.out.println("Объем твердотельного накопителя = " + ssdValue);
         long hddValue = 5000000000L;
@@ -37,60 +37,52 @@ public class VariablesTheme {
         System.out.println("\n4. Вывод min и max значений целых числовых типов");
         byte byteMaxValue = 127;
         System.out.println("Максимальное значение byte = " + byteMaxValue);
-        byteMaxValue++;
-        System.out.println("Значение byte после инкремента = " + byteMaxValue);
-        byteMaxValue--;
-        System.out.println("Значение byte после декремента = " + byteMaxValue);
+        System.out.println("Значение byte после инкремента = " + ++byteMaxValue);
+        System.out.println("Значение byte после декремента = " + --byteMaxValue);
         short shortMaxValue = 32767;
         System.out.println("Максимальное значение short = " + shortMaxValue);
-        shortMaxValue++;
-        System.out.println("Значение short после инкремента = " + shortMaxValue);
-        shortMaxValue--;
-        System.out.println("Значение short после декремента = " + shortMaxValue);
+        System.out.println("Значение short после инкремента = " + ++shortMaxValue);
+        System.out.println("Значение short после декремента = " + --shortMaxValue);
         int intMaxValue = 2_147_483_647;
         System.out.println("Максимальное значение int = " + intMaxValue);
-        intMaxValue++;
-        System.out.println("Значение int после инкремента = " + intMaxValue);
-        intMaxValue--;
-        System.out.println("Значение int после декремента = " + intMaxValue);
+        System.out.println("Значение int после инкремента = " + ++intMaxValue);
+        System.out.println("Значение int после декремента = " + --intMaxValue);
         long longMaxValue = 9_223_372_036_854_775_807L;
         System.out.println("Максимальное значение long = " + longMaxValue);
-        longMaxValue++;
-        System.out.println("Значение long после инкремента = " + longMaxValue);
-        longMaxValue--;
-        System.out.println("Значение long после декремента = " + longMaxValue);
+        System.out.println("Значение long после инкремента = " + ++longMaxValue);
+        System.out.println("Значение long после декремента = " + --longMaxValue);
 
         System.out.println("\n5. Перестановка значений переменных");
-        int num1 = 2;
-        int num2 = 5;
-        System.out.println("Исходные значения: num1 = " + num1 + ", num2 = " + num2);
-        int temp = num1;
-        num1 = num2;
-        num2 = temp;
-        System.out.println("Перестановка с помощью третьей переменной: num1 = " + num1 +
-                ", num2 = " + num2);
-        num1 += num2;
-        num2 = num1 - num2;
-        num1 -= num2;
-        System.out.println("Перестановка с помощью арифметических операций: num1 = " + num1 +
-                ", num2 = " + num2);
-        num1 ^= num2;
-        num2 ^= num1;
-        num1 ^= num2;
-        System.out.println("Перестановка с помощью побитовой операции ^: num1 = " + num1 +
-                ", num2 = " + num2);
+        int number1 = 2;
+        int number2 = 5;
+        System.out.println("Исходные значения: number1 = " + number1 + ", number2 = " + number2);
+        int temp = number1;
+        number1 = number2;
+        number2 = temp;
+        System.out.println("Перестановка с помощью третьей переменной: number1 = " + number1 +
+                ", number2 = " + number2);
+        number1 += number2;
+        number2 = number1 - number2;
+        number1 -= number2;
+        System.out.println("Перестановка с помощью арифметических операций: number1 = " + number1 +
+                ", number2 = " + number2);
+        number1 ^= number2;
+        number2 ^= number1;
+        number1 ^= number2;
+        System.out.println("Перестановка с помощью побитовой операции ^: number1 = " + number1 +
+                ", number2 = " + number2);
 
         System.out.println("\n6. Вывод символов и их кодов");
-        char symbol1 = '$';
-        char symbol2 = '*';
-        char symbol3 = '@';
-        char symbol4 = '|';
-        char symbol5 = '~';
-        System.out.println("Код символа = " + (int) symbol1 + ", символ = " + symbol1);
-        System.out.println("Код символа = " + (int) symbol2 + ", символ = " + symbol2);
-        System.out.println("Код символа = " + (int) symbol3 + ", символ = " + symbol3);
-        System.out.println("Код символа = " + (int) symbol4 + ", символ = " + symbol4);
-        System.out.println("Код символа = " + (int) symbol5 + ", символ = " + symbol5);
+        char dollar = '$';
+        char asterisk = '*';
+        char atSign = '@';
+        char verticalBar = '|';
+        char tilde = '~';
+        System.out.println("Код символа = " + (int) dollar + ", символ = " + dollar);
+        System.out.println("Код символа = " + (int) asterisk + ", символ = " + asterisk);
+        System.out.println("Код символа = " + (int) atSign + ", символ = " + atSign);
+        System.out.println("Код символа = " + (int) verticalBar + ", символ = " + verticalBar);
+        System.out.println("Код символа = " + (int) tilde + ", символ = " + tilde);
 
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
@@ -121,9 +113,9 @@ public class VariablesTheme {
 
         System.out.println("\n9. Перевод секунд в часы, минуты и секунды");
         int totalSeconds = 86399;
-        int hours = totalSeconds / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
-        System.out.printf("Время: %02d:%02d:%02d", hours, minutes, seconds);
+        int hh = totalSeconds / 3600;
+        int mm = (totalSeconds % 3600) / 60;
+        int ss = totalSeconds % 60;
+        System.out.printf("Время: %02d:%02d:%02d", hh, mm, ss);
     }
 }
