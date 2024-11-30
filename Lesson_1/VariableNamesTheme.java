@@ -27,8 +27,8 @@ public class VariableNamesTheme {
         System.out.println("Вес собаки = " + dogWeight);
 
         // Исходное число
-        int sourceNumber = 777;
-        System.out.println("Исходное число = " + sourceNumber);
+        int originalNumber = 777;
+        System.out.println("Исходное число = " + originalNumber);
 
         // Процент по вкладу
         double depositPercent = 6.9;
@@ -111,14 +111,14 @@ public class VariableNamesTheme {
         System.out.println("Путь до файла = " + path);
 
         // Количество чисел в каждой строке
-        int numbersCount = 21;
-        System.out.println("Количество чисел в каждой строке = " + numbersCount);
+        int numbersInEachRow = 21;
+        System.out.println("Количество чисел в каждой строке = " + numbersInEachRow);
 
         System.out.println("\n2. Boolean-переменные");
 
         // Сотни равны?
-        boolean isHundredsEquals = true;
-        System.out.println("Сотни равны? = " + isHundredsEquals);
+        boolean isEqualsHundreds = true;
+        System.out.println("Сотни равны? = " + isEqualsHundreds);
 
         // Компьютер включен?
         boolean isComputerOn = true;
@@ -175,8 +175,8 @@ public class VariableNamesTheme {
         System.out.println("Сокращенный uniform resource locator = " + shortUrl);
 
         // Новый идентификатор клиента
-        int newClientId = 1;
-        System.out.println("Новый идентификатор клиента = " + newClientId);
+        int newCid = 1;
+        System.out.println("Новый идентификатор клиента = " + newCid);
 
         // American standard code for information interchange
         String ascii = "ASCII";
