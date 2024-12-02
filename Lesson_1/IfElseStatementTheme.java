@@ -61,8 +61,8 @@ public class IfElseStatementTheme {
         int number02 = 223;
         int hundreds1 = number01 / 100;
         int hundreds2 = number02 / 100;
-        int tens1 = (number01) / 10 % 10;
-        int tens2 = (number02) / 10 % 10;
+        int tens1 = number01 / 10 % 10;
+        int tens2 = number02 / 10 % 10;
         int ones1 = number01 % 10;
         int ones2 = number02 % 10;
         if (hundreds1 != hundreds2 && tens1 != tens2 && ones1 != ones2) {
@@ -70,13 +70,13 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Исходные числа: " + number01 + " и " + number02);
             if (hundreds1 == hundreds2) {
-                System.out.println("В числах есть одинаковая цифра: " + hundreds1 + " в разряде 1");
+                System.out.println("В числах есть одинаковая цифра: " + hundreds1 + " в разряде 3");
             }
             if (tens1 == tens2) {
                 System.out.println("В числах есть одинаковая цифра: " + tens1 + " в разряде 2");
             }
             if (ones1 == ones2) {
-                System.out.println("В числах есть одинаковая цифра: " + ones1 + " в разряде 3");
+                System.out.println("В числах есть одинаковая цифра: " + ones1 + " в разряде 1");
             }
         }
 
@@ -94,39 +94,30 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Подсчет начисленных банком %");
         double deposit = 321123.59;
-        double percentage;
-        double totalAmount;
+        double percentage = 0;
         System.out.println("Сумма вклада = " + deposit);
         if (deposit < 100000) {
             percentage = deposit * 0.05;
-            System.out.println("Сумма начисленного % = " + percentage);
-            totalAmount = deposit + percentage;
-            System.out.println("Итоговая сумма с процентом = " + totalAmount);
         } else if (deposit >= 100000 && deposit <= 300000) {
             percentage = deposit * 0.07;
-            System.out.println("Сумма начисленного % = " + percentage);
-            totalAmount = deposit + percentage;
-            System.out.println("Итоговая сумма с процентом = " + totalAmount);
         } else if (deposit > 300000) {
             percentage = deposit * 0.1;
-            System.out.println("Сумма начисленного % = " + percentage);
-            totalAmount = deposit + percentage;
-            System.out.println("Итоговая сумма с процентом = " + totalAmount);
         }
+        double totalAmount = deposit + percentage;
+        System.out.println("Сумма начисленного % = " + percentage);
+        System.out.println("Итоговая сумма с процентом = " + totalAmount);
 
         System.out.println("\n7. Определение оценки по предметам");
         double historyPercent = 59;
         double programmingPercent = 92;
-        double historyGrade = 0;
-        double programmingGrade = 0;
+        double historyGrade = 5;
+        double programmingGrade = 5;
         if (historyPercent <= 60) {
             historyGrade = 2;
         } else if (historyPercent > 60) {
             historyGrade = 3;
         } else if (historyPercent > 73) {
             historyGrade = 4;
-        } else if (historyPercent > 91) {
-            historyGrade = 5;
         }
         if (programmingPercent <= 60) {
             programmingGrade = 2;
@@ -134,20 +125,18 @@ public class IfElseStatementTheme {
             programmingGrade = 3;
         } else if (programmingPercent > 73) {
             programmingGrade = 4;
-        } else if (programmingPercent > 91) {
-            programmingGrade = 5;
         }
+        double medianPercent = (historyPercent + programmingPercent) / 2;
         double medianGrade = (historyGrade + programmingGrade) / 2;
-        double medianPercentGrade = (historyPercent + programmingPercent) / 2;
         System.out.println("Оценка по истории = " + historyGrade);
         System.out.println("Оценка по программированию = " + programmingGrade);
         System.out.println("Средний балл оценок по предметам = " + medianGrade);
-        System.out.println("Средний % по предметам = " + medianPercentGrade);
+        System.out.println("Средний % по предметам = " + medianPercent);
 
         System.out.println("\n8. Расчет годовой прибыли");
-        double goodsIncome = 13025.233;
-        double rentCost = 5123.018;
-        double productionCost = 9001.729;
+        double goodsIncome = 13025.233 * 12;
+        double rentCost = 5123.018 * 12;
+        double productionCost = 9001.729 * 12;
         double annualIncome = goodsIncome - rentCost - productionCost;
         if (annualIncome <= 0) {
             System.out.println("Прибыль за год: " + annualIncome + " руб.");
