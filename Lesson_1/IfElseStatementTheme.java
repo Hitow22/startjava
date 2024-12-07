@@ -57,18 +57,18 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int number01 = 123;
-        int number02 = 223;
-        int hundreds1 = number01 / 100;
-        int hundreds2 = number02 / 100;
-        int tens1 = number01 / 10 % 10;
-        int tens2 = number02 / 10 % 10;
-        int ones1 = number01 % 10;
-        int ones2 = number02 % 10;
+        firstNumber = 123;
+        secondNumber = 223;
+        int hundreds1 = firstNumber / 100;
+        int hundreds2 = secondNumber / 100;
+        int tens1 = firstNumber / 10 % 10;
+        int tens2 = secondNumber / 10 % 10;
+        int ones1 = firstNumber % 10;
+        int ones2 = secondNumber % 10;
         if (hundreds1 != hundreds2 && tens1 != tens2 && ones1 != ones2) {
             System.out.println("Одинаковые цифры в числах отсутствуют");
         } else {
-            System.out.println("Исходные числа: " + number01 + " и " + number02);
+            System.out.println("Исходные числа: " + firstNumber + " и " + secondNumber);
             if (hundreds1 == hundreds2) {
                 System.out.println("В числах есть одинаковая цифра: " + hundreds1 + " в разряде 3");
             }
@@ -94,24 +94,21 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6. Подсчет начисленных банком %");
         double deposit = 321123.59;
-        double percentage = 0;
-        System.out.println("Сумма вклада = " + deposit);
+        double percentage = 0.1;
         if (deposit < 100000) {
-            percentage = deposit * 0.05;
+            percentage = 0.05;
         } else if (deposit >= 100000 && deposit <= 300000) {
-            percentage = deposit * 0.07;
-        } else if (deposit > 300000) {
-            percentage = deposit * 0.1;
+            percentage = 0.07;
         }
-        double totalAmount = deposit + percentage;
-        System.out.println("Сумма начисленного % = " + percentage);
+        double sumPercentage = deposit * percentage;
+        double totalAmount = deposit + sumPercentage;
+        System.out.println("Сумма вклада = " + deposit);
+        System.out.println("Сумма начисленного % = " + sumPercentage);
         System.out.println("Итоговая сумма с процентом = " + totalAmount);
 
         System.out.println("\n7. Определение оценки по предметам");
         double historyPercent = 59;
-        double programmingPercent = 92;
         double historyGrade = 5;
-        double programmingGrade = 5;
         if (historyPercent <= 60) {
             historyGrade = 2;
         } else if (historyPercent > 60) {
@@ -119,6 +116,8 @@ public class IfElseStatementTheme {
         } else if (historyPercent > 73) {
             historyGrade = 4;
         }
+        double programmingPercent = 92;
+        double programmingGrade = 5;
         if (programmingPercent <= 60) {
             programmingGrade = 2;
         } else if (programmingPercent > 60) {
@@ -134,10 +133,10 @@ public class IfElseStatementTheme {
         System.out.println("Средний % по предметам = " + medianPercent);
 
         System.out.println("\n8. Расчет годовой прибыли");
-        double goodsIncome = 13025.233 * 12;
-        double rentCost = 5123.018 * 12;
-        double productionCost = 9001.729 * 12;
-        double annualIncome = goodsIncome - rentCost - productionCost;
+        double goodsIncome = 13025.233;
+        double rentCost = 5123.018;
+        double productionCost = 9001.729;
+        double annualIncome = (goodsIncome - rentCost - productionCost) * 12;
         if (annualIncome <= 0) {
             System.out.println("Прибыль за год: " + annualIncome + " руб.");
         } else {
