@@ -1,45 +1,44 @@
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1. Подсчет суммы четных и нечетных чисел");
-        int start = -10;
-        int end = 21;
-        int i = start;
+        int rangeStart = -10;
+        int rangelEnd = 21;
+        int counter = rangeStart;
         int sumEven = 0;
         int sumOdd = 0;
         do {
-            if (i % 2 == 0) {
-                sumEven += i;
+            if (counter % 2 == 0) {
+                sumEven += counter;
             } else {
-                sumOdd += i;
+                sumOdd += counter;
             }
-            i++;
-        } while (i <= end);
-        System.out.println("В отрезке [" + start + ", " + end + "] сумма четных чисел = " + sumEven +
-                 ", а нечетных = " + sumOdd);
+            counter++;
+        } while (counter <= rangelEnd);
+        System.out.println("В отрезке [" + rangeStart + ", " + rangelEnd + "] сумма четных чисел = " + 
+                sumEven +
+                ", а нечетных = " + sumOdd);
 
         System.out.println("\n2. Вывод чисел между min и max в порядке убывания");
         int number1 = 10;
         int number2 = 5;
         int number3 = -1;
-        int max = 0;
-        int min = 0;
-        if (number1 > number2 && number1 > number3) {
-            max = number1;
-        } else if (number2 > number1 && number2 > number3) {
+        int max = number1;
+        int min = number1;
+        if (number2 > max) {
             max = number2;
-        } else if (number3 > number1 && number3 > number2) {
+        }
+        if (number3 > max) {
             max = number3;
         }
-        if (number1 < number2 && number1 < number3) {
-            min = number1;
-        } else if (number2 < number1 && number2 < number3) {
+        if (number2 < min) {
             min = number2;
-        } else if (number3 < number1 && number3 < number2) {
+        }
+        if (number3 < min) {
             min = number3;
         }
         System.out.print("Числа в интервале (" + min + ", " + max + ") в порядке убывания: ");
-        for (int j = max - 1; j > min; j--) {
-            System.out.print(j + " ");
+        for (int i = max - 1; i > min; i--) {
+            System.out.print(i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
@@ -49,18 +48,32 @@ public class CyclesTheme {
         while (number3 > 0) {
             int lastNumber = number3 % 10;
             sumNumbers += lastNumber;
-            System.out.print(lastNumber + "");
+            System.out.print(lastNumber);
             number3 /= 10;
         }
         System.out.println("\nСумма выделенных цифр = " + sumNumbers);
 
         System.out.println("\n4. Вывод чисел в несколько строк");
-        start = 1;
-        end = 24;
-        for (int g = start; g < end; g++) {
-            if (g % 2 != 0) {
-                System.out.printf("%05d%n", g);
+        rangeStart = 1;
+        rangelEnd = 24;
+        int numbersPerLine = 5;
+        counter = 0;
+        boolean hasPrinted = false;
+        for (int i = rangeStart; i < rangelEnd; i += 2) {
+            System.out.printf("%4d", i);
+            counter++;
+            hasPrinted = true;
+            if (counter == numbersPerLine) {
+                System.out.println();
+                counter = 0;
+                hasPrinted = false;
             }
+        }
+        if (counter > 0 && hasPrinted) {
+            for (int j = counter; j < numbersPerLine; j++) {
+                System.out.printf("%4d", 0);
+            }
+            System.out.println();
         }
 
         System.out.println("\n5. Проверка количества двоек числа на четность/нечетность");
@@ -68,8 +81,7 @@ public class CyclesTheme {
         System.out.print("В " + number3);
         int countTwos = 0;
         while (number3 > 0) {
-            int lastNumber = number3 % 10;
-            if (lastNumber == 2) {
+            if (number3 % 10 == 2) {
                 countTwos++;
             }
             number3 /= 10;
@@ -82,8 +94,8 @@ public class CyclesTheme {
 
         System.out.println("\n6. Вывод геометрических фигур");
         int symbolLimit = 10;
-        int counter = 0;
-        for (int j = 0; j < 50; j++) {
+        counter = 0;
+        for (int i = 0; i < 50; i++) {
             System.out.print('*');
             counter++;
             if (counter == symbolLimit) {
@@ -104,45 +116,44 @@ public class CyclesTheme {
             symbolLimit--;
         }
 
-        symbolLimit = 0;
-        counter = 0;
+        symbolLimit = 3;
+        int currentRow = 1;
         do {
             int indexCounter = 0;
-            while (indexCounter <= symbolLimit) {
-                System.out.print('$');
+            do {
+                System.out.print("$");
                 indexCounter++;
-                counter++;
-            }
+            } while (indexCounter < currentRow);
+
             System.out.println();
-            symbolLimit++;
-        } while (symbolLimit < 3);
-        symbolLimit = 2;
+            currentRow++;
+        } while (currentRow <= symbolLimit);
+        currentRow = symbolLimit - 1;
         do {
             int indexCounter = 0;
-            while (indexCounter < symbolLimit) {
-                System.out.print('$');
+            do {
+                System.out.print("$");
                 indexCounter++;
-                counter++;
-            }
+            } while (indexCounter < currentRow);
             System.out.println();
-            symbolLimit--;
-        } while (symbolLimit > 0);
+            currentRow--;
+        } while (currentRow > 0);
 
         System.out.println("\n7. Вывод ASCII-символов");
-        start = 33;
-        end = 48;
+        rangeStart = 33;
+        rangelEnd = 48;
         System.out.println("DECIMAL   CHARACTER   DESCRIPTION");
-        for (int j = start; j < end; j++) {
-            if (j % 2 != 0) {
-                System.out.printf("%4d%10c%13s%-1s%n", j, (char) j, " ", Character.getName(j));
+        for (int i = rangeStart; i < rangelEnd; i++) {
+            if (i % 2 != 0) {
+                System.out.printf("%4d%10c%13s%-1s%n", i, (char) i, " ", Character.getName(i));
             }
         }
-        start = 97;
-        end = 123;
+        rangeStart = 97;
+        rangelEnd = 123;
         System.out.println("\nDECIMAL   CHARACTER   DESCRIPTION");
-        for (int j = start; j < end; j++) {
-            if (j % 2 == 0) {
-                System.out.printf("%4d%10c%13s%-1s%n", j, (char) j, " ", Character.getName(j));
+        for (int i = rangeStart; i < rangelEnd; i++) {
+            if (i % 2 == 0) {
+                System.out.printf("%4d%10c%13s%-1s%n", i, (char) i, " ", Character.getName(i));
             }
         }
 
@@ -150,9 +161,8 @@ public class CyclesTheme {
         number3 = 1234321;
         int originalNumber = number3;
         int reversedNumber = 0;
-        int lastNumber;
-        while (number3 != 0) {
-            lastNumber = number3 % 10;
+        while (number3 > 0) {
+            int lastNumber = number3 % 10;
             reversedNumber = reversedNumber * 10 + lastNumber;
             number3 /= 10;
         }
@@ -169,7 +179,7 @@ public class CyclesTheme {
         int secondHalfSum = 0;
         counter = 0;
         while (number3 > 0) {
-            lastNumber = number3 % 10;
+            int lastNumber = number3 % 10;
             number3 /= 10;
             counter++;
             if (counter > 3) {
@@ -187,19 +197,18 @@ public class CyclesTheme {
         System.out.println("Сумма " + (originalNumber % 1000) + " = " + secondHalfSum);
 
         System.out.println("\n10. Вывод таблицы умножения Пифагора");
-        start = 2;
-        end = 9;
+        rangeStart = 2;
+        rangelEnd = 9;
         System.out.printf("%21s", "ТАБЛИЦА ПИФАГОРА\n");
         System.out.print("   |");
-        for (int j = start; j <= end; j++) {
-            System.out.printf("%4d", j);
+        for (int i = rangeStart; i <= rangelEnd; i++) {
+            System.out.printf("%4d", i);
         }
-        System.out.println();
-        System.out.println("--------------------------------------");
-        for (int k = start; k <= end; k++) {
-            System.out.printf("%2d |", k);
-            for (int j = start; j <= end; j++) {
-                System.out.printf("%4d", k * j);
+        System.out.println("\n--------------------------------------");
+        for (int i = rangeStart; i <= rangelEnd; i++) {
+            System.out.printf("%2d |", i);
+            for (int j = rangeStart; j <= rangelEnd; j++) {
+                System.out.printf("%4d", i * j);
             }
             System.out.println();
         }
