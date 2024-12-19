@@ -116,25 +116,21 @@ public class CyclesTheme {
 
         symbolLimit = 3;
         int currentRow = 1;
+        int step = 1;
         do {
             counter = 0;
-            while (counter < currentRow) {
+            do {
                 System.out.print("$");
                 counter++;
-            }
+            } while (counter < currentRow);
             System.out.println();
-            currentRow++;
-        } while (currentRow <= symbolLimit);
-        currentRow = symbolLimit - 1;
-        do {
-            counter = 0;
-            while (counter < currentRow) {
-                System.out.print("$");
-                counter++;
+            if (currentRow == symbolLimit) {
+                step = - 1;
             }
-            System.out.println();
-            currentRow--;
+            currentRow += step;
         } while (currentRow > 0);
+
+
 
         System.out.println("\n7. Вывод ASCII-символов");
         rangeStart = 33;
