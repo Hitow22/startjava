@@ -10,7 +10,7 @@ public class Person {
         System.out.println("Андрей может ходить");
     }
 
-    void seat() {
+    void sit() {
         System.out.println("Андрей может сидеть");
     }
 
