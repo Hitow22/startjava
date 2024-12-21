@@ -9,28 +9,24 @@ public class Calculator {
         char operator = input.next().charAt(0);
         System.out.println("Введите второе число");
         int secondNumber = input.nextInt();
-        int result = 0;
+        int result = 1;
         if (operator == '+') {
             result = firstNumber + secondNumber;
-            System.out.println(firstNumber + " + " + secondNumber + " = " + result);
         } else if (operator == '-') {
             result = firstNumber - secondNumber;
-            System.out.println(firstNumber + " - " + secondNumber + " = " + result);
         } else if (operator == '*') {
             result = firstNumber * secondNumber;
-            System.out.println(firstNumber + " * " + secondNumber + " = " + result);
         } else if (operator == '/') {
             result = firstNumber / secondNumber;
-            System.out.println(firstNumber + " / " + secondNumber + " = " + result);
         } else if (operator == '%') {
             result = firstNumber % secondNumber;
-            System.out.println(firstNumber + " % " + secondNumber + " = " + result);
         } else if (operator == '^') {
-            for (int i = 1; i < secondNumber; i++) {
-                result = firstNumber * firstNumber;
+            for (int i = 1; i <= secondNumber; i++) {
+                result *= firstNumber;
             }
-            System.out.println(firstNumber + " ^ " + secondNumber + " = " + result);
         }
+        System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + result);
     }
 }
+
 
