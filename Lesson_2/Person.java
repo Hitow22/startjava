@@ -7,23 +7,23 @@ public class Person {
     int age = 25;
 
     void walk() {
-        System.out.println("Андрей может ходить");
+        System.out.println(" может ходить");
     }
 
     void sit() {
-        System.out.println("Андрей может сидеть");
+        System.out.println(" может сидеть");
     }
 
     void run() {
-        System.out.println("Андрей может бегать");
+        System.out.println(" может бегать");
     }
 
     void speak() {
-        System.out.println("Андрей может говорить");
+        System.out.println(" может говорить");
     }
 
     void learnJava() {
-        System.out.println("Андрей может учить Java");
+        System.out.println(" может учить Java");
     }
 }
 
