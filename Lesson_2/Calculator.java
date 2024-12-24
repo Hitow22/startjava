@@ -1,8 +1,8 @@
 public class Calculator {
-    public double calculate(int firstNumber, int secondNumber, char operator) {
-        double result = 0;
+    public double calculate(int firstNumber, int secondNumber, char mathOperator) {
+        double result;
 
-        switch (operator) {
+        switch (mathOperator) {
             case '+':
                 result = firstNumber + secondNumber;
                 break;
@@ -13,14 +13,11 @@ public class Calculator {
                 result = firstNumber * secondNumber;
                 break;
             case '/':
-                if (secondNumber != 0) {
-                    result = (double) firstNumber / secondNumber;
-                    break;
-                } else {
-                    System.out.println("Деление на ноль запрещено");
-                    System.exit(0);
-                    break;
+                if (secondNumber == 0) {
+                    throw new IllegalArgumentException("Деление на ноль запрещено");
                 }
+                result = (double) firstNumber / secondNumber;
+                break;
             case '^':
                 result = Math.pow(firstNumber, secondNumber);
                 break;
@@ -28,8 +25,7 @@ public class Calculator {
                 result = firstNumber % secondNumber;
                 break;
             default:
-                System.out.println("Операция " + operator + " не поддерживается");
-                System.exit(0);
+                throw new IllegalArgumentException("Операция " + mathOperator + " не поддерживается");
         }
 
         return result;
