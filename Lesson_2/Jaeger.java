@@ -105,8 +105,8 @@ public class Jaeger {
 
     @Override
     public String toString() {
-        return String.format("ModelName: %s \nMark: %s \nOrigin: %s \nHeight: %s \nWeight: %s" +
-                "\nSpeed: %s \nStrength: %s \nArmor: %s",
+        return String.format("ModelName: %s \nMark: %s \nOrigin: %s \nHeight: %s" +
+                        " \nWeight: %s \nSpeed: %s \nStrength: %s \nArmor: %s",
                 modelName, mark, origin, height, weight, speed, strength, armor);
     }
 }

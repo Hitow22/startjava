@@ -10,7 +10,7 @@ public class JaegerTest {
         jaegerOne.setStrength(8);
         jaegerOne.setArmor(6);
 
-        System.out.println(jaegerOne.toString());
+        System.out.println(jaegerOne);
         System.out.println(jaegerOne.getModelName() + ":");
         jaegerOne.drift();
         jaegerOne.move();
@@ -20,7 +20,7 @@ public class JaegerTest {
         System.out.println();
         Jaeger jaegerTwo = new Jaeger("Crimson Typhoon", "Mark-4", "China", 76.2f,
                 1.722f, 9, 8, 6);
-        System.out.println(jaegerTwo.toString());
+        System.out.println(jaegerTwo);
 
         System.out.println(jaegerTwo.getModelName() + ":");
         jaegerTwo.drift();
