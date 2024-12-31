@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
 public class GuessNumber {
-    private static Player player1;
-    private static Player player2;
+    private final Player player1;
+    private final Player player2;
 
-    public static void startGame() {
+    public GuessNumber(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+    }
+
+    public void startGame() {
         Scanner input = new Scanner(System.in);
-        if (player1 == null || player2 == null) {
-            System.out.println("Введите имя первого игрока:");
-            player1 = new Player(input.nextLine());
-
-            System.out.println("Введите имя второго игрока:");
-            player2 = new Player(input.nextLine());
-        }
-
         int originalNumber = 1 + (int) (Math.random() * 100);
+
         boolean isPlayer1Turn = true;
         while (player1.getGuessNumber() != originalNumber && player2.getGuessNumber() != originalNumber) {
             if (isPlayer1Turn) {
