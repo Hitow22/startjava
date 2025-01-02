@@ -12,38 +12,27 @@ public class GuessNumber {
     public void startGame() {
         Scanner input = new Scanner(System.in);
         int computerNumber = 1 + (int) (Math.random() * 100);
-        int currPlayer = 0;
+        Player currPlayer = player1;
         while (true) {
-            if (currPlayer == 0) {
-                System.out.println("Ход игрока " + player1.getName());
-                System.out.println("Введите число: ");
-                player1.setGuessNumber(input.nextInt());
-                if (player1.getGuessNumber() == computerNumber) {
-                    System.out.println("Победил игрок " + player1.getName());
-                    break;
-                }
-
-                if (player1.getGuessNumber() > computerNumber) {
-                    System.out.println(player1.getGuessNumber() + " больше того, что загадал компьютер.");
-                } else {
-                    System.out.println(player1.getGuessNumber() + " меньше того, что загадал компьютер.");
-                }
-            } else {
-                System.out.println("Ход игрока " + player2.getName());
-                System.out.println("Введите число: ");
-                player2.setGuessNumber(input.nextInt());
-                if (player2.getGuessNumber() == computerNumber) {
-                    System.out.println("Победил игрок " + player2.getName());
-                    break;
-                }
-
-                if (player2.getGuessNumber() > computerNumber) {
-                    System.out.println(player2.getGuessNumber() + " больше того, что загадал компьютер.");
-                } else {
-                    System.out.println(player2.getGuessNumber() + " меньше того, что загадал компьютер.");
-                }
+            System.out.println("Ход игрока " + currPlayer.getName());
+            System.out.println("Введите число: ");
+            currPlayer.setGuessNumber(input.nextInt());
+            if (currPlayer.getGuessNumber() == computerNumber) {
+                System.out.println("Победил игрок " + currPlayer.getName());
+                break;
             }
-            currPlayer = 1 - currPlayer;
+
+            if (currPlayer.getGuessNumber() > computerNumber) {
+                System.out.println(currPlayer.getGuessNumber() + " больше того, что загадал компьютер.");
+            } else {
+                System.out.println(currPlayer.getGuessNumber() + " меньше того, что загадал компьютер.");
+            }
+
+            if (currPlayer == player1) {
+                currPlayer = player2;
+            } else {
+                currPlayer = player1;
+            }
         }
     }
 }
