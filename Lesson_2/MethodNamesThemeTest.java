@@ -1,12 +1,12 @@
 public class MethodNamesThemeTest {
     public static void main(String[] args) {
         System.out.println("1. Hе boolean-методы");
-        printNonBooleanMethods();
+        execNonBooleanMethods();
         System.out.println("\n2. boolean-методы");
-        printBooleanMethods();
+        execBooleanMethods();
     }
 
-    private static void printNonBooleanMethods() {
+    private static void execNonBooleanMethods() {
         NonBooleanMethods nonBm = new NonBooleanMethods();
 
         nonBm.findLongestWord();
@@ -25,18 +25,18 @@ public class MethodNamesThemeTest {
         nonBm.findBookByAuthor();
     }
 
-    private static void printBooleanMethods() {
+    private static void execBooleanMethods() {
         BooleanMethods bm = new BooleanMethods();
 
         System.out.println(bm.isProgramRunning());
-        System.out.println(bm.isFileOnDriveDeleted());
+        System.out.println(bm.isFileExists());
         System.out.println(bm.hasUniqueDigit());
-        System.out.println(bm.isUserInputLetter());
+        System.out.println(bm.isLetter());
         System.out.println(bm.hasEqualsDigits());
         System.out.println(bm.hasAttemptsInGame());
-        System.out.println(bm.isUserInputEmptyString());
+        System.out.println(bm.isEmptyString());
         System.out.println(bm.isDiceRollEven());
-        System.out.println(bm.isSsdPathCorrect());
+        System.out.println(bm.isPathCorrect());
         System.out.println(bm.isFileExist());
     }
 }
