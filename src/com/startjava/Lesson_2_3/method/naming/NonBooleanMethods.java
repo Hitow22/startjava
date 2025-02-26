@@ -1,4 +1,4 @@
-package com.startjava.Lesson_2_3.method.naming;
+package com.startjava.lesson_2_3.method.naming;
 
 public class NonBooleanMethods {
     public void findLongestWord() {
