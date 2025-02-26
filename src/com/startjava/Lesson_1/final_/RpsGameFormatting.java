@@ -53,7 +53,6 @@ public class RpsGameFormatting {
             System.out.print(paper + "\r");
             Thread.sleep(100);
         }
-
         System.out.println(sign2);
 
         if (sign1.equals(sign2)) {
