@@ -7,20 +7,20 @@ public class Reverser {
         Reverser rev = new Reverser();
 
         int[] zeroArray = new int[]{};
-        rev.reverseNumbers(zeroArray);
-        rev.printResult(zeroArray);
+        int[] reversedArray = rev.reverseNumbers(zeroArray);
+        rev.printArray(zeroArray, reversedArray);
 
         int[] nullArray = null;
-        rev.reverseNumbers(nullArray);
-        rev.printResult(nullArray);
+        reversedArray = rev.reverseNumbers(nullArray);
+        rev.printArray(nullArray, reversedArray);
 
         int[] firstArray = new int[]{6, 8, 9, 1};
-        rev.reverseNumbers(firstArray);
-        rev.printResult(firstArray);
+        reversedArray = rev.reverseNumbers(firstArray);
+        rev.printArray(firstArray, reversedArray);
 
         int[] secondArray = new int[]{13, 8, 5, 3, 2, 1, 1};
-        rev.reverseNumbers(secondArray);
-        rev.printResult(secondArray);
+        reversedArray = rev.reverseNumbers(secondArray);
+        rev.printArray(secondArray, reversedArray);
     }
 
     private int[] reverseNumbers(int[] numbers) {
@@ -38,14 +38,13 @@ public class Reverser {
         return reversedArray;
     }
 
-    private void printResult(int[] result) {
-        if (result != null) {
+    private void printArray(int[] originalArray, int[] reversedArray) {
+        if (originalArray != null || reversedArray != null) {
             System.out.print("   До реверса: ");
-            System.out.println(Arrays.toString(result));
+            System.out.println(Arrays.toString(originalArray));
 
-            result = reverseNumbers(result);
             System.out.print("После реверса: ");
-            System.out.println(Arrays.toString(result));
+            System.out.println(Arrays.toString(reversedArray));
         }
     }
 }
