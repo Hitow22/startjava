@@ -6,44 +6,41 @@ public class Reverser {
     public static void main(String[] args) {
         Reverser rev = new Reverser();
 
-        int[] zeroNumbers = new int[]{};
-        int[] reversedArray = rev.reverseNumbers(zeroNumbers);
-        rev.printArray(zeroNumbers, reversedArray);
+        int[] zeroNumbers = {};
+        int[] reversed = rev.reverse(zeroNumbers);
+        rev.print(zeroNumbers, reversed);
 
         int[] nullNumbers = null;
-        reversedArray = rev.reverseNumbers(nullNumbers);
-        rev.printArray(nullNumbers, reversedArray);
+        reversed = rev.reverse(nullNumbers);
+        rev.print(nullNumbers, reversed);
 
-        int[] firstNumbers = new int[]{6, 8, 9, 1};
-        reversedArray = rev.reverseNumbers(firstNumbers);
-        rev.printArray(firstNumbers, reversedArray);
+        int[] firstNumbers = {6, 8, 9, 1};
+        reversed = rev.reverse(firstNumbers);
+        rev.print(firstNumbers, reversed);
 
-        int[] secondNumbers = new int[]{13, 8, 5, 3, 2, 1, 1};
-        reversedArray = rev.reverseNumbers(secondNumbers);
-        rev.printArray(secondNumbers, reversedArray);
+        int[] secondNumbers = {13, 8, 5, 3, 2, 1, 1};
+        reversed = rev.reverse(secondNumbers);
+        rev.print(secondNumbers, reversed);
     }
 
-    private int[] reverseNumbers(int[] numbers) {
-        if (numbers == null) {
-            return null;
-        }
+    private int[] reverse(int[] numbers) {
+        if (numbers == null) return null;
 
         int length = numbers.length;
         int[] reversedArray = new int[length];
         for (int number : numbers) {
-            length--;
-            reversedArray[length] = number;
+            reversedArray[--length] = number;
         }
         return reversedArray;
     }
 
-    private void printArray(int[] originalArray, int[] reversedArray) {
-        if (originalArray != null || reversedArray != null) {
+    private void print(int[] original, int[] reversed) {
+        if (original != null || reversed != null) {
             System.out.print("   До реверса: ");
-            System.out.println(Arrays.toString(originalArray));
+            System.out.println(Arrays.toString(original));
 
             System.out.print("После реверса: ");
-            System.out.println(Arrays.toString(reversedArray));
+            System.out.println(Arrays.toString(reversed));
         } else System.out.println("Ошибка: массив равен null");
     }
 }
