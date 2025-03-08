@@ -31,17 +31,13 @@ public class FactorialCalculator {
         long[] factorials = new long[length];
         int index = 0;
         for (long number : numbers) {
-            if (number < 0) continue;
+            if (number <= 0) continue;
 
-            if (number == 0) {
-                factorials[index] = 1;
-            } else {
-                long factorial = 1;
-                for (int i = 2; i <= number; i++) {
-                    factorial *= i;
-                }
-                factorials[index++] = factorial;
+            long factorial = 1;
+            for (int i = 2; i <= number; i++) {
+                factorial *= i;
             }
+            factorials[index++] = factorial;
         }
         return factorials;
     }
