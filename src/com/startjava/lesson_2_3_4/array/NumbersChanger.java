@@ -1,28 +1,28 @@
 package com.startjava.lesson_2_3_4.array;
 
-public class Modifier {
+public class NumbersChanger {
     public static void main(String[] args) {
-        Modifier mod = new Modifier();
+        NumbersChanger changer = new NumbersChanger();
 
         int index = -1;
-        float[] original = mod.fillWithRandomNumbers();
-        float[] changed = mod.removeNumbersAboveIndex(original, index);
-        mod.print(original, changed, index);
+        float[] original = changer.fillWithRandomNumbers();
+        float[] changed = changer.removeNumbersAboveIndex(original, index);
+        changer.print(original, changed, index);
 
         index = 15;
-        original = mod.fillWithRandomNumbers();
-        changed = mod.removeNumbersAboveIndex(original, index);
-        mod.print(original, changed, index);
+        original = changer.fillWithRandomNumbers();
+        changed = changer.removeNumbersAboveIndex(original, index);
+        changer.print(original, changed, index);
 
         index = 0;
-        original = mod.fillWithRandomNumbers();
-        changed = mod.removeNumbersAboveIndex(original, index);
-        mod.print(original, changed, index);
+        original = changer.fillWithRandomNumbers();
+        changed = changer.removeNumbersAboveIndex(original, index);
+        changer.print(original, changed, index);
 
         index = 14;
-        original = mod.fillWithRandomNumbers();
-        changed = mod.removeNumbersAboveIndex(original, index);
-        mod.print(original, changed, index);
+        original = changer.fillWithRandomNumbers();
+        changed = changer.removeNumbersAboveIndex(original, index);
+        changer.print(original, changed, index);
     }
 
     private float[] fillWithRandomNumbers() {
