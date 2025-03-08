@@ -4,24 +4,24 @@ public class FactorialCalculator {
     public static void main(String[] args) {
         FactorialCalculator fc = new FactorialCalculator();
 
-        int[] numbers = new int[]{};
-        long[] factorials = fc.calculate(numbers);
-        fc.print(numbers, factorials);
+        int[] zeroNumbers = {};
+        long[] factorials = fc.calculate(zeroNumbers);
+        fc.print(zeroNumbers, factorials);
 
         factorials = fc.calculate(null);
         fc.print(null, factorials);
 
-        numbers = new int[]{8, 0, 9};
-        factorials = fc.calculate(numbers);
-        fc.print(numbers, factorials);
+        int[] firstNumbers = {8, 0, 9};
+        factorials = fc.calculate(firstNumbers);
+        fc.print(firstNumbers, factorials);
 
-        numbers = new int[]{-3, 1, 7, 13};
-        factorials = fc.calculate(numbers);
-        fc.print(numbers, factorials);
+        int[] secondNumbers = {-3, 1, 7, 13};
+        factorials = fc.calculate(secondNumbers);
+        fc.print(secondNumbers, factorials);
 
-        numbers = new int[]{-22, -0};
-        factorials = fc.calculate(numbers);
-        fc.print(numbers, factorials);
+        int[] thirdNumbers = {-22, -0};
+        factorials = fc.calculate(thirdNumbers);
+        fc.print(thirdNumbers, factorials);
     }
 
     private long[] calculate(int... numbers) {
@@ -31,45 +31,53 @@ public class FactorialCalculator {
         long[] factorials = new long[length];
         int index = 0;
         for (long number : numbers) {
-            if (number > 0) {
+            if (number < 0) continue;
+
+            if (number == 0) {
+                factorials[index] = 1;
+            } else {
                 long factorial = 1;
-                for (int i = 1; i <= number; i++) {
+                for (int i = 2; i <= number; i++) {
                     factorial *= i;
                 }
                 factorials[index++] = factorial;
-            } else if (number == 0) {
-                factorials[index] = 1;
             }
         }
         return factorials;
     }
 
-    private void print(int[] original, long[] factorial) {
-        if (original != null || factorial != null) {
-            int index = 0;
-            for (int number : original) {
-                if (number > 0) {
-                    System.out.print(number + "! = ");
-                    if (number == 1) {
-                        System.out.println("1");
-                    } else {
-                        StringBuilder expr = new StringBuilder();
-                        for (int i = 1; i <= number; i++) {
-                            expr = (i != number) ?
-                                   (expr.append(i).append(" * ")) :
-                                   (expr.append(i).append(" = ").append(factorial[index]).append("\n"));
-                        }
-                        System.out.print(expr);
-                    }
-                    index++;
+    private void print(int[] original, long[] factorials) {
+        if (original == null || factorials == null) {
+            System.out.println("Ошибка: массив равен null");
+            return;
+        }
+
+        int length = original.length;
+        if (length == 0) {
+            System.out.println("Ошибка: длина массива равна 0");
+            return;
+        }
+
+        int index = 0;
+        for (int number : original) {
+            if (number > 0) {
+                System.out.print(number + "! = ");
+                if (number == 1) {
+                    System.out.println("1");
                 } else {
-                    String error = (number < 0) ?
-                            ("Ошибка: факториал " + number + "! не определен") :
-                            (number + "! = 1");
-                    System.out.println(error);
+                    StringBuilder expr = new StringBuilder();
+                    for (int i = 1; i <= number; i++) {
+                        expr.append(i != number ? i + " * " : i + " = " + factorials[index] + "\n");
+                    }
+                    System.out.print(expr);
                 }
+                index++;
+            } else if (number == 0) {
+                System.out.println(number + "! = 1");
+            } else {
+                System.out.println("Ошибка: факториал " + number + "! не определен");
             }
-        } else System.out.println("Ошибка: массив равен null");
+        }
     }
 }
 
