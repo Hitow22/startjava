@@ -4,28 +4,27 @@ public class NumbersChanger {
     public static void main(String[] args) {
         NumbersChanger changer = new NumbersChanger();
 
-        int index = -1;
-        float[] original = changer.fillWithRandomNumbers();
-        float[] changed = changer.removeNumbersAboveIndex(original, index);
-        changer.print(original, changed, index);
+        int[] indexes = {-1, 15, 0, 14};
+        for (int index : indexes) {
+            float[] original = changer.fillRandomNumbers();
+            float[] changed = changer.removeNumbersAboveIndex(original, index);
+            changer.print(original, changed, index);
 
-        index = 15;
-        original = changer.fillWithRandomNumbers();
-        changed = changer.removeNumbersAboveIndex(original, index);
-        changer.print(original, changed, index);
+            original = changer.fillRandomNumbers();
+            changed = changer.removeNumbersAboveIndex(original, index);
+            changer.print(original, changed, index);
 
-        index = 0;
-        original = changer.fillWithRandomNumbers();
-        changed = changer.removeNumbersAboveIndex(original, index);
-        changer.print(original, changed, index);
+            original = changer.fillRandomNumbers();
+            changed = changer.removeNumbersAboveIndex(original, index);
+            changer.print(original, changed, index);
 
-        index = 14;
-        original = changer.fillWithRandomNumbers();
-        changed = changer.removeNumbersAboveIndex(original, index);
-        changer.print(original, changed, index);
+            original = changer.fillRandomNumbers();
+            changed = changer.removeNumbersAboveIndex(original, index);
+            changer.print(original, changed, index);
+        }
     }
 
-    private float[] fillWithRandomNumbers() {
+    private float[] fillRandomNumbers() {
         float[] random = new float[15];
         int length = random.length;
         for (int i = 0; i < length; i++) {
@@ -35,17 +34,12 @@ public class NumbersChanger {
     }
 
     private float[] removeNumbersAboveIndex(float[] original, int index) {
-        int length = original.length;
-        float[] changed = new float[length];
+        float[] changed = new float[original.length];
 
-        if (index >= 0 && index < length) {
+        if (index >= 0 && index < original.length) {
             int counter = 0;
             for (float number : original) {
-                if (number > original[index]) {
-                    changed[counter++] = 0;
-                } else {
-                    changed[counter++] = number;
-                }
+                changed[counter++] = (number > original[index]) ? 0 : number;
             }
         } else changed = original;
         return changed;
@@ -55,10 +49,10 @@ public class NumbersChanger {
         int length = original.length;
         if (index >= 0 && index < length) {
             System.out.println("\nИсходный массив ");
-            printArrays(original);
+            printArray(original);
 
             System.out.println("\nИзмененный массив ");
-            printArrays(changed);
+            printArray(changed);
             System.out.print("\nЗначение из ячейки " + index + " ");
             System.out.printf("%.3f ", original[index]);
             int zeroCount = countZeros(changed);
@@ -68,7 +62,7 @@ public class NumbersChanger {
         }
     }
 
-    private void printArrays(float[] array) {
+    private void printArray(float[] array) {
         int counter = 0;
         for (float number : array) {
             if (counter != 8) {
